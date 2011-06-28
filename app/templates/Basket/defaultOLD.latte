@@ -1,0 +1,51 @@
+{block content}
+   <div id="levy">   
+<h2>Nákupní košík</h2>
+{if $proInfo}
+	Máte v košíku: {foreach $proInfo as $num => $proj} 
+
+	{if $iterator->isOdd()}
+{$proj['title']} {$proj['date']} {$proj['place']} {$proj['price']} Kč
+{/if}
+{if $iterator->isEven()}
+{$proj}x <a href="{plink 'Basket:deleteOrder', 'id' => $proInfo[$num-1]['id']}">Odebrat z košíku</a><br>
+{/if}
+{/foreach}
+<br>
+<br>
+Celková cena: <b>{$price} Kč</b><br>
+{else}
+Váš nákupní košík je prozatím prázdný.
+{/if}
+
+
+{if $price != 0}
+Zadejte Váš email, kam budou zaslány čísla lístků na jednotlivé projekce.
+{widget form}
+{/if}
+<br><br><br><br><br><br><br><br><br><br>
+</div><!-- konec div#left -->
+
+   <div id="pravy">
+    <div class="jak">
+      <h2>Jak to funguje?</h2>
+      <ul>
+        <li>objednáte a zaplatíte pomocí <img src="{$basePath}/images/paysec.png" alt="PaySec" width="60px" width="24px" /></li>
+        <li>na e-mail Vám přijde kód vstupenky</li>
+        <li>kód si vytiskněte, opište</li>
+        <li>kód předložíte při vstuppu do kinosálu</li>
+        <li>bez správného kódu je e-vstupenka neplatná</li>
+      </ul>
+      <p><a href="{plink Info:}">zjistit více o e-vstupence</a></p>
+    </div>
+    <div class="jak vstupenka">
+      <h2>Vyhněme se nejasnostem</h2>
+      <ul>
+        <li>kód vlastní vstupenky nikomu neukazujte</li>
+        <li>e-vstupenka opravňuje jednoho diváka k jedné návštěvě vybrané projekce</li>
+      </ul>  
+      <p><a href="{plink Info:}">zjistit více o kódu e-vstupenky</a></p>
+    </div>	
+   </div>
+   <div class="cistic"></div>
+{/block content}

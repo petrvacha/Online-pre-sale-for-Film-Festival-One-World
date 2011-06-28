@@ -1,0 +1,124 @@
+{block content}
+   <div id="levy">   
+   <h2>Vstupenky</h2> 
+
+
+
+<div class="messages" n:foreach="$flashes as $flash" class="flash">
+{if $basket}
+	<a href="{plink Basket:}">
+{/if}
+{$flash->message}
+{if $basket}
+</a>
+{/if}
+
+</div>
+{foreach $tickets as $ticket}
+	<p class="vsinfo">{$ticket}</p>
+{/foreach}
+
+	{if $pages}
+		<p class="str">
+		{if $page == 1}
+			&laquo; 
+			<a href="{plink Homepage:}" class="akt">1</a>
+		{else}
+			<a href="{plink Homepage:default, $page-1}">&laquo;</a>
+			<a href="{plink Homepage:}">1</a>
+		{/if}
+	
+
+		{for $i=2; $i<=$pages; $i++}
+			{if $page == $i}
+				<a href="{plink Homepage:default, $i}" class="akt">{$i}</a>
+			{else}
+				<a href="{plink Homepage:default, $i}">{$i}</a>
+			{/if}
+		{/for}
+
+		{if $pages> $page}
+			<a href="{plink Homepage:default, $page+1}">&raquo;</a>
+		{else}
+			&raquo;
+		{/if}
+		</p>
+	{/if}
+
+{foreach $projectionArray as $id => $projection}
+   <div class="vstupenka">
+   
+    <a class="obr" href="{plink Onefilm:, $id}"><img src="{$basePath}/images/{$projection['photo']}" alt="ilustrační obrázek {$projection['title']}"></a>
+    <div class="info">
+    <h3><a href="{plink Onefilm:, $id}">{$projection['title']}</a></h3>
+    <p>{$projection['date']} &middot; {$projection['time']} &middot; {$projection['place']} &middot; zbývá {$projection['tickets']} e-vstupenek</p>
+    <p>{$projection['info']|truncate:300}</p><!-- domluvme se na zkracene verzi popisku filmu 300 znaku -->
+    {if $projection['tickets']}
+	<p class="cena">{$projection['price']} Kč</p> <!-- v pripade vyprodani se v tomto HTML tagu zobrazuje hlaska "na internetu vyprodano..." -->
+	<a class="koupit" href="{plink Onefilm:, $id}">Koupit</a>
+    {else}
+	<br><p class="staticMessages">Na internetu vyprodáno. Vstupenky zakoupíte v Domě Pánů z Lipé nebo na projekčním místě.</p>
+    {/if}
+    
+    </div>                 
+   <div class="cistic"></div>
+   </div><br><!-- konec div.vstupenka -->
+
+{/foreach}
+
+
+{if $pages}
+	<p class="str">
+	{if $page == 1}
+		&laquo; 
+		<a href="{plink Homepage:}" class="akt">1</a>
+	{else}
+		<a href="{plink Homepage:, $page-1}">&laquo;</a>
+		<a href="{plink Homepage:}">1</a>
+	{/if}
+	
+
+	{for $i=2; $i <= $pages; $i++}
+		{if $page == $i}
+			<a href="{plink Homepage:, $i}" class="akt">{$i}</a>
+		{else}
+			<a href="{plink Homepage:, $i}">{$i}</a>
+		{/if}
+	{/for}
+
+	{if $pages > $page}
+		<a href="{plink Homepage:, $page+1}">&raquo;</a>
+	{else}
+		&raquo;
+	{/if}
+	</p>
+{/if}
+   </div><!-- konec div#left -->
+
+   <div id="pravy">
+    <div class="jak">
+      <h2>Jak to funguje?</h2>
+      <ul>
+        <li>objednáte a zaplatíte pomocí PaySec</li>
+        <li>na e-mail Vám přijde kód vstupenky</li>
+        <li>kód si vytiskněte, opište</li>
+        <li>kód předložíte při vstuppu do kinosálu</li>
+        <li>bez správného kódu je e-vstupenka neplatná</li>
+      </ul>
+      <p><a href="{plink Info:}">zjistit více o e-vstupence</a></p>
+    </div>
+    <div class="jak vstupenka">
+      <h2>Vyhněme se nejasnostem</h2>
+      <ul>
+        <li>kód vlastní vstupenky nikomu neukazujte</li>
+        <li>e-vstupenka opravňuje jednoho diváka k jedné návštěvě vybrané projekce</li>
+      </ul>  
+      <p><a href="{plink Info:}">zjistit více o kódu e-vstupenky</a></p>  
+      <br />
+    <img src="{$basePath}/images/logo-paysec-velke.gif" alt="PaySec" width="76px" width="90px" />
+    </div>	
+   </div>
+   <div class="cistic"></div>
+{/block content}
+
+

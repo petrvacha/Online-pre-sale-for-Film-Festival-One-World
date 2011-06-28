@@ -1,0 +1,64 @@
+ * { margin: 0; padding: 0; }
+  body { text-align: center; font: 0.8em/1.5em Arial, Helvetica, sans-serif; color: rgb(217,239,255); background: #01070e url(../images/bg_top.jpg) center top no-repeat; }
+  #obal { width: 770px; margin: 0 auto 0 auto; text-align: left; }
+  a { color: rgb(255,237,0); }
+  a:hover { color: rgb(217,239,255); }
+  .f-right { float: right; }
+  .f-left { float: left; }
+  a img { border: 0; }
+  
+  
+
+  #hlavicka { padding: 90px 0 5px 0; }
+  #hlavicka h1, #hlavicka h2 { color: #FFF; }
+  .pred-brno { margin-left: 10px; }
+  #hlavicka .start { color: rgb(141,155,166); margin-left: 11px; }
+  
+  #levy { width: 540px; float: left; background: #01070e; padding: 10px 0 0 10px; min-height: 400px; height: auto; _height: 400px; }
+  #levy ul { margin: 5px 0 5px 15px; }
+  #levy h2 { margin-bottom: 5px; }
+  .mr-top { margin-top: 15px; }
+  .mr-bot { margin-bottom: 10px; }
+  
+  #menu { margin-top: 90px; padding: 0; list-style: none; background: url(../images/menu.png); position: relative; height: 34px; line-height: 34px; }
+  #menu li { display: inline; color: #222; }
+  #menu li a { padding: 0 10px; color: #222; text-decoration: none; font-weight: bold; }        
+  .festweb { position: absolute; top: 0px; right: 0px; display: block; color: #222; }
+
+  #novinky { padding: 10px 15px 10px 15px; border-right: 1px solid #BCBCBC; border-bottom: 1px solid #BCBCBC; }
+  #novinky p { margin-top: 3px; }
+  #novinky p.datum { margin-top: 10px; font-style: italic; }
+
+  #pravy { width: 210px; float: right; padding: 0 0 0 10px; background: #01070e; }
+  #pravy p { margin: 5px 0 5px 0; line-height: 1.5em; }
+  #pravy .jak { background: url(../images/blok.gif) no-repeat; margin: 0 0 10px 10px; padding: 5px; }
+  #pravy .jak h2 { font-size: 1.2em; margin: 0 0 5px 0; }
+  #pravy .jak ul { margin-left: 15px; }
+  
+  .vstupenka { margin: 10px 0; position: relative; }
+  .vstupenka .info h3 { width: 305px; }
+  .vstupenka .obr { float: left; width: 130px;  }
+  .vstupenka .info { float: left; width: 400px; position: relative; }
+  .vstupenka .cena { position: absolute; top: 0; right: 50px; font-weight: bold; font-size: 1.25em; }
+  .vstupenka .koupit { position: absolute; top: 0; right: 0; }
+  .cenadet { font-weight: bold; font-size: 1.25em; color: rgb(255,237,0); }
+  .ce { margin: 2px 10px 15px 0; }
+  .vstupenka .info .vlozkosik { margin-left: 75px; }
+  
+  .str { text-align: center; }
+  .str a { margin: 0 5px; }
+  .str a.akt { text-decoration: none; }
+
+  div.cistic { clear:both; height:1px; margin: -1px 0 0 0; padding:0; border: 0; visibility: hidden; }
+
+  #paticka { padding: 15px 0 15px 0; margin-top: 15px; border-top: 1px solid #36424a; text-align: center; font-size: .85em; color: #EDEDED; background: rgb(27,35,43); }
+  #paticka a:hover { text-decoration: underline; }
+  #paticka a { color: rgb(217,239,255); text-decoration: none; }
+
+  .moviePicture { padding-right: 5px}
+
+  .messages {color: #7fff00; font-weight: bold;}
+  .staticMessages {color: #7fff00;}
+  
+  table.kos { border-collapse: collapse; border-left: 1px solid rgb(217,239,255); border-bottom: 1px solid rgb(217,239,255); }
+  table.kos td, table.kos th { padding: 3px 5px; border-right: 1px solid rgb(217,239,255); border-top: 1px solid rgb(217,239,255); }

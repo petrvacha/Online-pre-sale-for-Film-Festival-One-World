@@ -1,0 +1,13 @@
+{block content}
+   <div id="levy">   
+<h2>Administrace</h2>
+<div class="messages" n:foreach="$flashes as $flash" class="flash">{$flash->message}</div>
+{if !$login}
+{$text}
+{widget form}
+{/if}<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div><!-- konec div#left -->
+
+
+   <div class="cistic"></div>
+{/block content}

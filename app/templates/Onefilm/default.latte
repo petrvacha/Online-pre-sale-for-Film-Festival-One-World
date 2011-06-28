@@ -1,0 +1,58 @@
+{block content}
+
+   <div id="levy">   
+		<h2>Projekce</h2>
+
+
+<h3><a href="">{$projection['title']}</a></h3>
+<p>{$projection['date']} &middot; {$projection['time']} &middot; {$projection['place']} &middot; zbývá {$projection['tickets']} vstupenek</p>
+<div class="vstupenka">
+<a href="" class="obr"><img src="{$basePath}/images/{$projection['photo']}"></a>
+<div class="info">
+<p class="f-left ce">Cena vstupenky:&nbsp;<span class="cenadet">{$projection['price']}&nbsp;Kč</span></p>
+<div class="f-left">
+{if $permitSale}
+	{if $countTicket && $projection['locked']==0}
+		{control form begin}
+		{$control['form']['tickets']->label}{$control['form']['tickets']->control} {$control['form']['order']->control}
+		{control form end}
+	{else}
+		<p class="staticMessages">Na internetu vyprodáno nebo uzavřeno. Vstupenky zakoupíte v Domě Pánů z Lipé nebo na projekčním místě.</p>
+	{/if}
+{/if}
+</div>
+<div class="cistic"></div>
+{$projection['movieinfo']}
+
+</div></div>
+<div class="cistic"></div>
+<a href="{plink Homepage:}">Zpět</a>
+
+
+   </div><!-- konec div#left -->
+
+   <div id="pravy">
+    <div class="jak">
+      <h2>Jak to funguje?</h2>
+      <ul>
+        <li>objednáte a zaplatíte pomocí PaySec</li>
+        <li>na e-mail Vám přijde kód vstupenky</li>
+        <li>kód si vytiskněte, opište</li>
+        <li>kód předložíte při vstuppu do kinosálu</li>
+        <li>bez správného kódu je e-vstupenka neplatná</li>
+      </ul>
+      <p><a href="{plink Info:}">zjistit více o e-vstupence</a></p>
+    </div>
+    <div class="jak vstupenka">
+      <h2>Vyhněme se nejasnostem</h2>
+      <ul>
+        <li>kód vlastní vstupenky nikomu neukazujte</li>
+        <li>e-vstupenka opravňuje jednoho diváka k jedné návštěvě vybrané projekce</li>
+      </ul>  
+      <p><a href="{plink Info:}">zjistit více o kódu e-vstupenky</a></p>     
+      <br />
+    <img src="{$basePath}/images/logo-paysec-velke.gif" alt="PaySec" width="76px" width="90px" />
+    </div>	
+   </div>
+   <div class="cistic"></div>
+{/block content}	

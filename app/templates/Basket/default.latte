@@ -1,0 +1,73 @@
+{block content}
+   <div id="levy">   
+<h2>Nákupní košík</h2>
+{if $proInfo}
+<table class="kos">
+<tr>
+<th>Film</th>
+<th>Datum</th>
+<th>Místo</th>
+<th>Cena</th>
+<th>Počet vstupenek</th>
+<th>&nbsp;</th>
+</tr>
+	{foreach $proInfo as $num => $proj} 
+
+	{if $iterator->isOdd()}
+	<tr>
+<td>{$proj['title']}</td>
+<td>{$proj['date']}</td>
+<td>{$proj['place']}</td>
+<td>{$proj['price']} Kč</td>
+{/if}
+{if $iterator->isEven()}
+<td>{$proj}ks</td>
+<td><a href="{plink 'Basket:deleteOrder', 'id' => $proInfo[$num-1]['id']}">odebrat</a></td></tr>
+{/if}
+
+{/foreach}
+<tr>
+<td colspan="6" align="right">Celková cena: <strong>{$price}</strong> Kč</td>
+{else}
+<td colspan="6">Nákupní košík je prázdný. Vyberte si filmy, které chcete navštívit, a vložte vstupenky do košíku.</td>
+{/if}
+</tr></table>
+
+
+{if $price != 0}
+<h2 class="mr-top">Objednávka</h2>
+<p class="mr-bot">Objednávka je jednoduchá a rychlá.<br />
+Zadejte pouze Vaši e-mailovou adresu, na kterou Vám doručíme kódy elektronických vstupenek.
+V dalším kroku objednávku potvrdíte a poté přejdete k zaplacení.</p><br>
+{control form begin}
+	{$control['form']['email']->label} {$control['form']['email']->control} {$control['form']['pay']->control}
+{control form end}
+{/if}
+
+</div><!-- konec div#left -->
+
+   <div id="pravy">
+    <div class="jak">
+      <h2>Jak to funguje?</h2>
+      <ul>
+        <li>objednáte a zaplatíte pomocí PaySec</li>
+        <li>na e-mail Vám přijde kód vstupenky</li>
+        <li>kód si vytiskněte, opište</li>
+        <li>kód předložíte při vstuppu do kinosálu</li>
+        <li>bez správného kódu je e-vstupenka neplatná</li>
+      </ul>
+      <p><a href="{plink Info:}">zjistit více o e-vstupence</a></p>
+    </div>
+    <div class="jak vstupenka">
+      <h2>Vyhněme se nejasnostem</h2>
+      <ul>
+        <li>kód vlastní vstupenky nikomu neukazujte</li>
+        <li>e-vstupenka opravňuje jednoho diváka k jedné návštěvě vybrané projekce</li>
+      </ul>  
+      <p><a href="{plink Info:}">zjistit více o kódu e-vstupenky</a></p>    
+      <br />
+    <img src="{$basePath}/images/logo-paysec-velke.gif" alt="PaySec" width="76px" width="90px" />
+    </div>	
+   </div>
+   <div class="cistic"></div>
+{/block content}

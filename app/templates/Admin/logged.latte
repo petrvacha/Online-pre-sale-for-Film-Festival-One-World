@@ -1,0 +1,14 @@
+{block content}
+   <div id="levy">   
+<h2>Administrace</h2>
+{if $login}
+{$text} <a href="{plink Admin:logout}">Odhlasit!</a><br>
+<b>Seznam lístků</b><br><br><br>
+{widget ticketsSelector}
+{/if}
+<br><br><br><br><br><br><br><br><br><br><br><br>
+</div><!-- konec div#left -->
+
+
+   <div class="cistic"></div>
+{/block content}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="Jeden svět Brno - předprodej vstupenek">
+	<meta name="robots" content="{$robots}" n:ifset="$robots">
+
+	<title>Jeden svět Brno - předprodej vstupenek</title>
+
+	<link rel="stylesheet" href="{$basePath}/css/styl.css" type="text/css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="{$basePath}/js/netteForms.js"></script>
+
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21734837-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+<body>
+	<div id="obal">
+		<div id="hlavicka">
+		  <a href="/"><img class="pred-brno" src="{$basePath}/images/predprodej-brno.png" alt="Předprodej vstupenek na Jeden svět v Brně" width="138px" height="40px" /></a>
+			
+	
+			<ul id="menu">
+				<li><a href="{plink Homepage:}">VSTUPENKY</a> |</li>
+				<li><a href="{plink Info:}">JAK TO FUNGUJE?</a> |</li>
+				<li><a href="{plink Basket:}" class="m-right">NÁKUPNÍ KOŠÍK</a></li> 
+				<li><a href="http://www.jedensvet.cz/brno" class="festweb">WEB JEDEN SVĚT BRNO</a></li>
+			</ul>    
+			<div class="cistic"></div>
+		</div>
+
+		{include #content}
+
+		<div id="paticka">© 2011 <a href="{plink Homepage:}">Předprodej vstupenek Jeden svět Brno</a>, 
+		<a href="http://www.jedensvet.cz/brno">web Jeden svět Brno</a>, 
+<a href="mailto:jedensvet.brno@email.cz">jedensvet.brno@seznam.cz</a>, pořádá Člověk v tísni o.p.s.
+</div>
+
+
+</body>
+</html>

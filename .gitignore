@@ -1,0 +1,8 @@
+temp/
+log/
+session/
+app/config.ini
+.project
+.buildpath
+.settings/
+

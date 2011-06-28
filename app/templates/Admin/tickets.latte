@@ -1,0 +1,29 @@
+{block content}
+   <div id="levy">   
+<h2>Administrace</h2>
+{if $login}
+	{$text} <a href="{plink Admin:logout}">Odhlásit!</a><br>
+	<b>Seznam lístků</b><br><br><br>
+	{widget ticketsSelector}
+
+
+
+	<table border="1" style="font-size: 12px; table-layout: fixed; border-collapse: collapse; text-align: center; color: #000">
+		<tr bgcolor="yellow" style="font-weight: bold;"><td>id</td><td>kód lístku</td><td>Název filmu</td><td>Datum</td><td>Čas</td><td>místo</td></tr>
+		{foreach $tickets as $ticket}
+			{if $iterator->isOdd()}
+				<tr style="Background-color: Teal;  color: white">
+			{else}
+				<tr style="Background-color: Teal;  color: white">
+			{/if}
+<td>{$ticket['id']}</td><td>{$ticket['hash']}</td><td>{$ticket['title']}</td><td>{$ticket['date']}</td><td>{$ticket['time']}</td>
+					<td>{$ticket['place']}</td></tr>
+		{/foreach}
+	</table>
+{/if}
+<br>
+</div><!-- konec div#left -->
+
+
+   <div class="cistic"></div>
+{/block content}
